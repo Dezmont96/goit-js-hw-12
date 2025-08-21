@@ -2,7 +2,8 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryContainer = document.querySelector('.gallery');
-const loader = document.querySelector('.loader');
+const loader = document.querySelector('.loader-container');
+const loadMoreBtn = document.querySelector('.load-more-btn');
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -37,9 +38,17 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-    loader.classList.add('is-visible');
+  loader.classList.remove('hidden');
 }
 
 export function hideLoader() {
-    loader.classList.remove('is-visible');
+  loader.classList.add('hidden');
+}
+
+export function showLoadMoreButton() {
+  loadMoreBtn.classList.remove('hidden');
+}
+
+export function hideLoadMoreButton() {
+  loadMoreBtn.classList.add('hidden');
 }
